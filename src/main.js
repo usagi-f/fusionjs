@@ -10,8 +10,8 @@ import Redux, {
   GetInitialStateToken,
 } from 'fusion-plugin-react-redux'
 import root from './root.js'
-import initialState from './initialState'
-import reducers from './reducer'
+import initialState from './redux/initialState'
+import reducer from './redux/index'
 
 export default () => {
   const app = new App(root)
@@ -19,6 +19,6 @@ export default () => {
   app.register(Router)
   app.register(ReduxToken, Redux)
   __NODE__ && app.register(GetInitialStateToken, initialState)
-  app.register(ReducerToken, reducers)
+  app.register(ReducerToken, reducer)
   return app
 }
