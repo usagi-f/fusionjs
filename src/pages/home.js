@@ -37,8 +37,8 @@ const Home = (props: { count: number }) => (
 )
 
 export default connect(
-  ({ count }) => ({ count }),
-  dispatch => ({
+  ({ count }: number) => ({ count }),
+  (dispatch: Function) => ({
     increment() {
       dispatch({ type: 'INCREMENT' })
     },

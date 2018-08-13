@@ -10,20 +10,15 @@ import Redux, {
   GetInitialStateToken,
 } from 'fusion-plugin-react-redux'
 import root from './root.js'
-import reducers from './reducers'
-
-const getInitialState = ctx => {
-  return {
-    count: 0
-  }
-}
+import initialState from './initialState'
+import reducers from './reducer'
 
 export default () => {
   const app = new App(root)
   app.register(Styletron)
   app.register(Router)
   app.register(ReduxToken, Redux)
-  __NODE__ && app.register(GetInitialStateToken, getInitialState)
+  __NODE__ && app.register(GetInitialStateToken, initialState)
   app.register(ReducerToken, reducers)
   return app
 }

@@ -17,7 +17,12 @@ const CountView = styled('p', {
   fontSize: '24px',
 })
 
-const Count: Function = (props: { count: number, handleCount: Function }): React.Node => (
+type Props = {
+  count: number,
+  handleCount: Function,
+}
+
+const Count: Function = (props: Props): React.Node => (
   <Fragment>
     <Button onClick={props.handleCount}>+1</Button>
     <CountView>Count: {props.count}</CountView>
