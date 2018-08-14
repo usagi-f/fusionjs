@@ -31,7 +31,11 @@ const Home = (props: { count: number }) => (
     </style>
     <Center>
       <Title />
-      <Count count={props.count} handleCount={props.increment} />
+      <Count
+        count={props.count}
+        handleIncrement={props.increment}
+        handleDecrement={props.decrement}
+      />
     </Center>
   </FullHeightDiv>
 )
@@ -41,6 +45,9 @@ export default connect(
   (dispatch: Function) => ({
     increment() {
       dispatch({ type: 'INCREMENT' })
+    },
+    decrement() {
+      dispatch({ type: 'DECREMENT' })
     },
   })
 )(Home)

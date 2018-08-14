@@ -19,12 +19,14 @@ const CountView = styled('p', {
 
 type Props = {
   count: number,
-  handleCount: Function,
+  handleIncrement: Function,
+  handleDecrement: Function,
 }
 
 const Count: Function = (props: Props): React.Node => (
   <Fragment>
-    <Button onClick={props.handleCount}>+1</Button>
+    <Button onClick={props.handleIncrement}>+1</Button>
+    <Button onClick={props.handleDecrement}>-1</Button>
     <CountView>Count: {props.count}</CountView>
   </Fragment>
 )
