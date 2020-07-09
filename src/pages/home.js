@@ -1,10 +1,8 @@
 // @flow
 
 import React from 'react'
-import { connect } from 'react-redux'
 import { styled } from 'fusion-plugin-styletron-react'
 import Title from '../components/title'
-import Count from '../components/count'
 
 const Center = styled('div', {
   display: 'flex',
@@ -18,7 +16,7 @@ const FullHeightDiv = styled('div', {
   backgroundColor: '#FFFFFF',
 })
 
-const Home = (props: { count: number }) => (
+const Home = () => (
   <FullHeightDiv>
     <style>
       {`
@@ -31,23 +29,8 @@ const Home = (props: { count: number }) => (
     </style>
     <Center>
       <Title />
-      <Count
-        count={props.count}
-        handleIncrement={props.increment}
-        handleDecrement={props.decrement}
-      />
     </Center>
   </FullHeightDiv>
 )
 
-export default connect(
-  ({ count }: number) => ({ count }),
-  (dispatch: Function) => ({
-    increment() {
-      dispatch({ type: 'INCREMENT' })
-    },
-    decrement() {
-      dispatch({ type: 'DECREMENT' })
-    },
-  })
-)(Home)
+export default Home

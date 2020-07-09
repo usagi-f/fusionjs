@@ -1,10 +1,10 @@
 // @flow
 
-type initialState = {
+type initialStateType = {
   count: number
 }
 
-const initialState: Function = (ctx: any): initialState => ({
+const initialState: Function = (ctx: any): initialStateType => ({
   count: 0
 })
 
